@@ -1,0 +1,43 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML&CSS- Lab1</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<div style="text-align: center; padding-top: 5%;"> 
+    <video
+    src="./video/frozen.mp4"
+    width="60%"
+    poster="./image/frozen.jpg"
+    id="vid"
+
+  ></video>
+
+ 
+  <div class="video-progress">
+   <input style="width: 60%" class="seek" id="seek" value="0" min="0" type="range" step="1">
+    <div style="display: flex; align-items: center; justify-content: center;">
+        <div id="timeprogress">00:00</div> <span>/</span>
+        <div id="fulltime"></div>
+    </div>
+  </div>
+  <div>
+    <button type="button" id="play">Play</button>
+    <button type="button" id="pause">Pause</button>
+    <button type="button" id="backwards"><<</button>
+    <button type="button" id="forwards">>></button>
+    <button type="button" id="mute">Mute</button>
+    <button type="button" id="full-screen">Full-Screen</button>
+    <label for="volume">volume:</label>
+    <input id="volume" type="range" value="10" min="0" max="100"/>
+    <label for="speed">Speed:</label>
+    <input id="speed" type="range" value="1" min="0" max="4"/>
+  </div>
+  
+</div> 
+<script src="./video.js"></script>
+</body>
+</html>
