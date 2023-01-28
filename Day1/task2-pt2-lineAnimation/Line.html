@@ -1,0 +1,35 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Line Animation</title>
+</head>
+<body>
+    <canvas style="border: 2px solid black;" id="canvas" width=450 height=450></canvas>
+
+    <script>
+    var can = document.getElementById("canvas");
+    var ctx = can.getContext("2d");
+    var x= 1;
+    var y= 1;
+    const myInterval =   setInterval(draw, 100)
+    function  draw(){
+        if(x<450){
+            ctx.moveTo(x,y);
+            ctx.lineTo(x+=10 ,y+=10);
+            ctx.strokeStyle = "red";
+            ctx.lineWidth = 5
+            ctx.stroke();
+       }
+       else{
+            alert("End of Animation")
+            clearInterval(myInterval);
+       }
+       
+    }
+   
+  
+   </script>
+</body>
+</html>
