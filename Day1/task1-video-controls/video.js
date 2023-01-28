@@ -25,7 +25,7 @@ pauseBtn.addEventListener("click", function() {
 
 //seeking 
 seekForward.addEventListener("click", function () {
-    vid.currentTime += 10;
+    vid.currentTime = vid.duration
 })
 seekBackwards.addEventListener("click", function () {
     vid.currentTime-=10;
