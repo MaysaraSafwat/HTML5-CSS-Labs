@@ -1,0 +1,34 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microdata</title>
+</head>
+<body>
+    <h2>Microdata</h2>
+    <!-- add style="display:none" to hide data from your webpage -->
+    <div itemscope itemtype="http://data-vocabulary.org/Organization"> 
+        <span itemprop="name">SD & Gaming CoE, ITI</span>
+        <div itemprop="address" itemscope itemtype="http://data-vocabulary.org/Address">
+
+            <span itemprop="street-address">km 28 Cairo-Alexandria Desert Rd</span>
+            <span itemprop="locality">Smart Village</span>
+            <span itemprop="region">Giza</span>
+            <span itemprop="country-name">Egypt</span>
+            <span itemprop="postal-code">11371</span>
+        </div>
+          <span itemprop="tel">35355695</span>,
+          <span itemprop="url">http://iti.gov.eg/</span>
+       <span itemprop="geo" itemscope itemtype="http://data-vocabulary.org/Geo">
+         <span itemprop="latitude">30.2545N</span>
+         <span itemprop="logitude">77.0040W</span>
+       </span>
+      </div>
+
+      <div>
+        <img width = "90%" src="./validationResult.png"/>
+      </div>
+
+  </body>
+</html>
