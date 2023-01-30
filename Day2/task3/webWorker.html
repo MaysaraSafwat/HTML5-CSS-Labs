@@ -1,0 +1,64 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Worker</title>
+    <style>
+    
+    body{
+        padding: 2%;
+        text-align: center;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    button {
+    margin: 2% 5%;
+    background: #aa1155;
+    color: #fff;
+    padding: 1rem 3rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 2rem;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    }
+    p{
+        font-size: 1.1em;
+    }
+</style>
+</head>
+<body>
+    <h2>
+        Web Worker Demo Clone
+    </h2>
+    <button id="sum">Calc Sum</button>
+    <button id="bg">Toggle background</button>
+    <p id="res"></p>
+
+    <script>
+      var worker = new Worker("worker.js");
+      var sum = document.getElementById("sum");
+      var bg = document.getElementById("bg");
+      var resault = document.getElementById("res")
+      console.log(sum,bg)
+
+      sum.onclick = function(){
+         worker.postMessage(""); 
+      }
+      worker.onmessage = function(message){
+        console.log(message);
+        let msg = message.data;
+        resault.innerHTML =`Sum is ${msg}`
+      }
+
+      bg.onclick = function(){
+        if(document.body.style.background !== "gray"){
+            document.body.style.background = "gray";
+        }else{
+            document.body.style.background = "beige";
+        }
+      }
+    </script>
+</body>
+</html>
