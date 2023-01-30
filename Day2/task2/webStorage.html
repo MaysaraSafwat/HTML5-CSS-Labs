@@ -1,0 +1,94 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change </title>
+    <style>
+        div> div{
+           width: 50%;
+           margin: 0 auto;
+        }
+        input {
+            display: block;
+            width: 100%;
+            height: 50px;
+            margin: 5% 5%;
+            margin-bottom: 2%;
+            border: none;
+            border-bottom: 2px solid gray;
+
+        }
+        .btn {
+            padding: 1% 2%;
+            border : none;
+            margin: 1% 5%;
+            cursor: pointer;
+        }
+        input:hover {
+            border: 2px solid gray
+        }
+        p{
+            display: none;
+        }
+        a{
+            text-decoration: none;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <div style="text-align: center; padding-top: 2%;">
+        <h3>Change Email</h3>
+        <div style="margin: 0 auto">
+         <form>
+          <input type="text" id="name" name="username" placeholder="Username" required/>
+          <p id ="nameErr">Please enter a valid Username</p>
+          <input 
+            name="email"
+            id="email"
+            placeholder="Email"/>
+            <p id ="emailErr">Please enter a valid email</p>
+          <button onclick="return validate()" class="btn" ><a href="./displayFormValues.html">Submit</a></button>  
+        </form>
+      </div>
+  <script>
+   
+   function validate () {
+    console.log("clicked")
+    var eErrMsg = document.getElementById("emailErr");
+    var email = document.getElementById("email").value;
+    var name = document.getElementById("name").value;
+    var nameErrMsg = document.getElementById("nameErr");
+
+    //setting state
+   
+    
+
+    const emailPattern =/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/g;
+    
+    
+    if(email.length==0 || !emailPattern.test(email)) {
+
+     eErrMsg.style.display = "block";
+     eErrMsg.style.color = "red";
+     return false;
+    }
+     if(name.length ==0) {
+       
+     nameErrMsg.style.display = "block";
+     nameErrMsg.style.color = "red";
+     return false;
+    } else {
+        localStorage.setItem("username",name);
+        localStorage.setItem("email",email); 
+        eErrMsg.innerHTML="Successfuly Changed!"
+        eErrMsg.style.display = "block";
+        eErrMsg.style.color = "green";
+        return true;
+    }
+
+   }
+  </script>    
+</body>
+</html>

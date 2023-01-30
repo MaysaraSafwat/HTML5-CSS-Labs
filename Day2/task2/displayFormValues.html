@@ -1,0 +1,67 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Values</title>
+    <style>
+        body{
+            text-align: center;
+            padding: 2%;
+        }
+        .info{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5em;
+        }
+        .info div:first-of-type {
+            padding: 1%;
+            font-weight: bold;
+        }
+        .info div:last-of-type {
+            padding: 1%  0.5%;
+            color: rgb(117, 117, 117);
+        }
+        fieldset {
+            margin: 3% auto;
+            width: 50%;
+            padding: 1%;
+            border: 2px solid gray;
+            border-radius: 15px;
+        }
+        legend{
+            text-align: start;
+            font-size: 1.4em;
+            font-weight: bolder;
+            color: #aa1155;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+        Submitted!
+    </h1>
+    <fieldset>
+        <legend>Your Info</legend>
+    <div class="info">
+      <div>Name: </div>
+      <div id="uname"></div>
+    </div>
+
+    <div class="info">
+        <div>Name: </div>
+        <div id="uemail"></div>
+      </div>
+    </fieldset>
+   <script>
+    let username = document.getElementById("uname");
+    let useremail = document.getElementById("uemail");
+    let name = localStorage.getItem("username");
+    let email = localStorage.getItem("email");
+
+    username.innerHTML = `${name}`
+    useremail.innerHTML = `${email}`
+   </script>
+</body>
+</html>
