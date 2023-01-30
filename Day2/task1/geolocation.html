@@ -1,0 +1,75 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geolocation</title>
+    <style>
+        body{
+            padding: 2%;
+            text-align: center;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        button {
+        margin-top: 5%;
+        background: #aa1155;
+        color: #fff;
+        padding: 1rem 3rem;
+        font-size: 1.5rem;
+        font-weight: 600;
+        border: none;
+        border-radius: 2rem;
+        cursor: pointer;
+        transition-duration: 0.4s;
+        }
+    </style>
+</head>
+<body>
+    <h2>
+        Click to get your Current Location!
+    </h2>
+    <button onclick="getLoc()">Get Location</button>
+    <p id ="errMsg"></p>
+
+    <script>
+      var errMsg = document.getElementById("errMsg")  
+      errMsg.style.color = 'red'
+      function getLoc() {
+        navigator.geolocation.getCurrentPosition(showLoc, showErr, options);
+      }
+      function showLoc(e) {
+        var long = e.coords.longitude;
+        var lat = e.coords.latitude;
+        var currLoc = "http://maps.google.com/maps?q" + lat + ",+" + long
+        console.log(e, long, lat);
+        location.assign("http://maps.google.com/maps?q" + lat + ",+" + long);
+      }
+      function showErr(x) {
+        let msg =''
+        switch (x.code) {
+          case 0:
+           msg = x.message
+            errMsg.innerHTML = `${msg}`
+            break;
+          case 1:
+          msg = x.message
+            errMsg.innerHTML = `${msg}`
+            break;
+          case 2:
+           msg = x.message
+            errMsg.innerHTML = `${msg}`
+            break;
+          case 3:
+            msg = x.message
+            errMsg.innerHTML = `${msg}`
+            break;
+        }
+      }
+
+      var options = {
+         //timeout:0
+      };
+
+    </script>
+</body>
+</html>
