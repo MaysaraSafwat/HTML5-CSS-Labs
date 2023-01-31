@@ -3,6 +3,7 @@
 }
 body{
     text-align: center;
+    gap:5px;
     display: grid;
     grid-template-areas:
       "navv navv navv navv"
@@ -19,6 +20,7 @@ body{
   aside {
     background-color: #D2691E;
     grid-area: aside;
+
   }
   main{
     background-color:  #F7D6D0;
